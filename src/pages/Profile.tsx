@@ -19,16 +19,13 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Header */}
       <header className="bg-[var(--gradient-primary)] text-primary-foreground p-4 shadow-[var(--shadow-drink)]">
         <div className="max-w-lg mx-auto">
           <h1 className="text-xl font-semibold">Perfil</h1>
         </div>
       </header>
 
-      {/* Content */}
       <main className="max-w-lg mx-auto p-4">
-        {/* User Info */}
         <Card className="mb-6 bg-[var(--gradient-card)] border-border shadow-[var(--shadow-card)]">
           <CardHeader className="text-center pb-4">
             <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-[var(--gradient-primary)] flex items-center justify-center">
@@ -39,15 +36,14 @@ export default function Profile() {
           </CardHeader>
         </Card>
 
-        {/* Stats */}
         <div className="grid grid-cols-2 gap-4 mb-6">
-          <Card className="bg-[var(--gradient-card)] border-border">
+          {/* <Card className="bg-[var(--gradient-card)] border-border">
             <CardContent className="p-4 text-center">
               <Wine className="w-8 h-8 text-primary mx-auto mb-2" />
               <p className="text-2xl font-bold text-foreground">∞</p>
               <p className="text-sm text-muted-foreground">Receitas Disponíveis</p>
             </CardContent>
-          </Card>
+          </Card> */}
           
           <Card className="bg-[var(--gradient-card)] border-border">
             <CardContent className="p-4 text-center">
@@ -58,7 +54,6 @@ export default function Profile() {
           </Card>
         </div>
 
-        {/* About App */}
         <Card className="mb-6 bg-[var(--gradient-card)] border-border">
           <CardHeader>
             <CardTitle className="text-lg text-foreground">Sobre o Easy Drink</CardTitle>
@@ -72,7 +67,6 @@ export default function Profile() {
           </CardContent>
         </Card>
 
-        {/* Logout Button */}
         <Button 
           onClick={handleLogout}
           variant="destructive"

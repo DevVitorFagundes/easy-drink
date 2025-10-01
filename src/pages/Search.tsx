@@ -46,7 +46,6 @@ export default function Search() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Header */}
       <header className="bg-card border-b border-border p-4 sticky top-0 z-10 shadow-sm">
         <div className="max-w-lg mx-auto">
           <h1 className="text-xl font-semibold text-foreground mb-4">Buscar Receitas</h1>
@@ -77,7 +76,6 @@ export default function Search() {
         </div>
       </header>
 
-      {/* Content */}
       <main className="max-w-lg mx-auto p-4">
         {!hasSearched ? (
           <div className="text-center py-12">

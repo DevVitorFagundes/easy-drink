@@ -123,7 +123,7 @@ export default function Login() {
             </div>
             <Button 
               type="submit" 
-              className="w-full bg-[var(--gradient-primary)] hover:shadow-[var(--shadow-drink)] transition-all duration-300" 
+              className="w-full bg-black" 
               disabled={isLoading}
             >
               {isLoading ? (
@@ -140,7 +140,7 @@ export default function Login() {
             <button
               type="button"
               onClick={() => setIsLogin(!isLogin)}
-              className="text-primary hover:text-primary-glow transition-colors text-sm"
+              className="text-black "
             >
               {isLogin ? "Não tem conta? Cadastre-se" : "Já tem conta? Faça login"}
             </button>

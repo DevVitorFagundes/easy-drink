@@ -21,7 +21,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check for existing session
+    
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -30,10 +30,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    // Simulate API call - in real app, this would be a real authentication
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    // Check stored users
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const existingUser = users.find((u: any) => u.email === email && u.password === password);
     
@@ -48,12 +46,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const register = async (email: string, password: string, name: string): Promise<boolean> => {
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     
-    // Check if user already exists
     if (users.some((u: any) => u.email === email)) {
       return false;
     }
@@ -68,7 +64,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
     
-    // Auto login after registration
     const userData = { id: newUser.id, email: newUser.email, name: newUser.name };
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));

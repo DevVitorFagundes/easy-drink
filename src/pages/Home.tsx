@@ -24,7 +24,6 @@ export default function Home() {
   const fetchRandomDrinks = async () => {
     setIsLoading(true);
     try {
-      // Fetch multiple random drinks
       const promises = Array.from({ length: 12 }, () =>
         fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php").then(res => res.json())
       );
@@ -34,7 +33,6 @@ export default function Home() {
         .map(result => result.drinks?.[0])
         .filter(Boolean)
         .filter((drink, index, self) => 
-          // Remove duplicates
           self.findIndex(d => d.idDrink === drink.idDrink) === index
         );
       
@@ -48,7 +46,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Header */}
       <header className="bg-[var(--gradient-primary)] text-primary-foreground p-4 shadow-[var(--shadow-drink)]">
         <div className="flex items-center justify-between max-w-lg mx-auto">
           <div className="flex items-center gap-3">
@@ -63,7 +60,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Content */}
       <main className="max-w-lg mx-auto p-4">
         <div className="mb-6">
           <h2 className="text-xl font-semibold text-foreground mb-2">Receitas em Destaque</h2>
