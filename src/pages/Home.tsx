@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <header className="bg-[var(--gradient-primary)] text-primary-foreground p-4 shadow-[var(--shadow-drink)]">
+      <header className="bg-black text-primary-foreground p-4 shadow-[var(--shadow-drink)]">
         <div className="flex items-center justify-between max-w-lg mx-auto">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center">

@@ -18,7 +18,6 @@ export default function Favorites() {
   useEffect(() => {
     fetchFavorites();
     
-    // Listen for storage changes to update favorites in real-time
     const handleStorageChange = () => {
       fetchFavorites();
     };
@@ -38,7 +37,6 @@ export default function Favorites() {
         return;
       }
 
-      // Fetch details for each favorite drink
       const drinkPromises = favorites.map((id: string) =>
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
           .then(res => res.json())
@@ -57,7 +55,6 @@ export default function Favorites() {
     }
   };
 
-  // Refresh favorites when returning to this page
   useEffect(() => {
     const handleFocus = () => {
       fetchFavorites();
@@ -69,7 +66,6 @@ export default function Favorites() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Header */}
       <header className="bg-card border-b border-border p-4 sticky top-0 z-10 shadow-sm">
         <div className="max-w-lg mx-auto">
           <h1 className="text-xl font-semibold text-foreground">Meus Favoritos</h1>
@@ -79,7 +75,6 @@ export default function Favorites() {
         </div>
       </header>
 
-      {/* Content */}
       <main className="max-w-lg mx-auto p-4">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-12">
